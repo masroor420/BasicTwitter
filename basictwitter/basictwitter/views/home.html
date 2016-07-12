@@ -1,0 +1,63 @@
+﻿
+<div class="container" style="padding-top: 70px;margin-top: 3%;">
+    <div>
+        <div class="row">
+            <div class="col-md-3 col-md-offset-1" style="padding-bottom: 50px">
+                <div class="container" style="max-width: 275px; max-height: 250px; overflow-y: hidden">
+                    <div class="row" style="text-align: center;">              
+                        <h3 style="margin-top: 10px;">{{selectedData.userName}}</h3>
+                        <span class="label label-info pull-left" style="width: 45% !important;font-size: 1em;">Followers {{(mySelf.followedBy ) ? mySelf.followedBy.length : 0 }}</span>
+                        <span class="label label-info pull-right" style="width: 45% !important;font-size: 1em;">Following {{(mySelf.following) ? mySelf.following.length : 0 }}</span>                       
+                    </div>
+                </div>
+                <div class="container" style="max-width: 275px;margin-top:5%;">
+                    <div class="row">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title" style="text-align: center;">People on Twitter</h3>
+                            </div>
+                            <div class="container" style="max-width: 273px; padding: 0px;">
+                                <div class="panel-body" style="padding: 5px !important">
+                                    <ul class="list-group" style="max-height: 300px; overflow-y: auto;margin: 0px;" >
+                                        <li ng-repeat="tweet in selectedData.globalTweets.tweets" class="list-group-item" style="width: 100%">
+                                            <button class="btn btn-primary btn-sm" style="background: transparent;color:black;border: 0px;">{{tweet.userName}}</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style type="text/css">
+                #globaltweet {
+                    margin-top: 3% !important;
+                }
+
+                @media screen and (max-width: 550px) {
+                    #tweet_input {
+                        width: 100% !important;
+                    }
+
+                    #tweetButton {
+                        width: 100% !important;
+                        margin-top: 2%;
+                    }
+
+                    #globaltweet {
+                        margin-top: 15% !important;
+                    }
+                }
+            </style>
+            <div class="col-md-6 col-md-offset-1" style="min-height: 200px; max-height: 500px;">
+                <form ng-submit="addTweet()">
+                    <input class="input-sm" id="tweet_input" type="text" required ng-model='msg' placeholder="tweet here!" style="width: 85%;border: 1px solid grey;height: 40px !important;font-size: 1.2em">
+                    <button type="submit" class="btn btn-primary btn-sm pull-right" style="font-size: 1.2em;height: 40px !important;" id="tweetButton">Tweet</button>
+                </form>
+                <div style="width: 100%;margin:auto;">
+                    <tweet></tweet>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

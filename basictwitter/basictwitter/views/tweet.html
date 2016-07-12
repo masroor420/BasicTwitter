@@ -1,0 +1,31 @@
+﻿<div ng-show="feed == 'global'">
+    <ul class="list-group list-tweet" id="globaltweet" style="height: 75vh; max-height:1000px; overflow: auto" >
+        <li ng-repeat="tweet in selectedData.getGlobalTweets().tweets" >                  
+            <div class="list-group-item" style="width: 100%">
+                <h4 class="list-group-item-heading">
+                    <span>{{tweet.userName}}</span>
+                    <a style="cursor:pointer">{{tweet.userName}}</a>
+                    <span style="float:right;font-size:0.6em;font-weight:400;color:#999999">{{source.createdAt}}</span>
+                </h4>
+                <p class="list-group-item-text">{{tweet.message}}</p>
+            </div>
+        </li>
+    </ul>
+</div>
+<div ng-show="feed == 'personal'">
+    <ul class="list-group list-tweet" style="height: 75vh; max-height:1000px; overflow: auto" scroll-down="personalTweets">
+        <li ng-repeat="tweet in selectedData.getPersonalTweets().tweets">
+            <div class="list-group-item" style="width: 100%">
+                <div class="list-group-item" style="width: 100%">
+                    <h4 class="list-group-item-heading">
+                        <span>{{tweet.userName}}</span>
+                        <a style="cursor:pointer">{{tweet.userName}}</a>
+                        <span style="float:right;font-size:0.6em;font-weight:400;color:#999999">{{source.createdAt}}</span>
+                    </h4>
+                    <p class="list-group-item-text">{{tweet.message}}</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+

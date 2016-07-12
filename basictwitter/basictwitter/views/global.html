@@ -1,0 +1,26 @@
+﻿<div style="height: 90vh;overflow-y: auto; overflow-x: hidden; margin-top: 10vh;" >
+    <style>
+        @media screen and (max-width: 700px) {
+            #login {
+                width: 70% !important;
+            }
+        }
+    </style>     
+      
+    <div class="container" style="height: 100% !important;">
+        <form ng-submit="login()" style="width: 35%;margin:auto;" id="login">
+            <div ng-show="loading">
+                Loading....
+            </div>
+            <div class="jumbotron" style="padding: 4%">
+                <input ng-required="true" type="text" ng-model="userName" placeholder="Name" style="border: 1px solid grey;border-radius: 5px;font-size: 1.7em;width: 100%;padding-left: 15px;"><br>
+                <input type="submit" value="Enter Your Name" style="width: 100%;margin-top: 3%;font-size: 1.5em;" class="btn btn-primary">
+            </div>
+        </form>
+        <hr>
+        <h2 style="text-align: center;color: #3276b1">What are people up to?</h2>
+        <div style="padding: 2%;width: 80%;margin:auto;">
+            <tweet></tweet>
+        </div>
+    </div>
+</div>
